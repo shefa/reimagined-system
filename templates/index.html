@@ -1,0 +1,24 @@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type=text/javascript>$(function(){
+$('a').on('click', function(e){e.preventDefault();$.getJSON('/midi/'+this.id, function(d){});return false;});});
+</script>
+<div class='container'>
+    <h3>nice</h3>
+        <form>
+            <a href=# id=0><button class='btn btn-default'>Clean 1</button></a>
+            <a href=# id=1><button class='btn btn-default'>Lead 1</button></a>
+            <a href=# id=2><button class='btn btn-default'>Riff 1</button></a>
+        </form>
+        <br>
+        <form>
+            <a href=# id=3><button class='btn btn-default'>Clean 2</button></a>
+            <a href=# id=4><button class='btn btn-default'>Lead 2</button></a>
+            <a href=# id=5><button class='btn btn-default'>Riff 2</button></a>
+        </form>
+        <br>
+        <form>
+            <a href=# id=6><button class='btn btn-default'>Clean 3</button></a>
+            <a href=# id=7><button class='btn btn-default'>Lead 3</button></a>
+            <a href=# id=8><button class='btn btn-default'>Default</button></a>
+        </form>
+</div>
