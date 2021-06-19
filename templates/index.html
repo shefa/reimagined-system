@@ -1,24 +1,50 @@
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Nice</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
 <script type=text/javascript>$(function(){
+$(".slider" ).slider();
+$(".slider" ).on( "slidechange", function(e,u) {console.log(this.id); console.log(u.value);$.getJSON('/midi2/'+this.id+'/'+u.value, function(d){});} );
 $('a').on('click', function(e){e.preventDefault();$.getJSON('/midi/'+this.id, function(d){});return false;});});
 </script>
-<div class='container'>
-    <h3>nice</h3>
+<div class="container-fluid p-5">
+  <h3>nice</h3>
+  	<div class="row mb-3">
         <form>
-            <a href=# id=0><button class='btn btn-default'>Clean 1</button></a>
-            <a href=# id=1><button class='btn btn-default'>Lead 1</button></a>
-            <a href=# id=2><button class='btn btn-default'>Riff 1</button></a>
+            <a href=# id=0><button class='btn btn-outline-primary col-md-3 col-xs-4'>Clean 1</button></a>
+            <a href=# id=1><button class='btn btn-outline-primary col-md-3 col-xs-4'>Lead 1</button></a>
+            <a href=# id=2><button class='btn btn-outline-primary col-md-3 col-xs-4'>Riff 1</button></a>
         </form>
-        <br>
+    </div>
+    <div class="row mb-3">
         <form>
-            <a href=# id=3><button class='btn btn-default'>Clean 2</button></a>
-            <a href=# id=4><button class='btn btn-default'>Lead 2</button></a>
-            <a href=# id=5><button class='btn btn-default'>Riff 2</button></a>
+            <a href=# id=3><button class='btn btn-outline-primary col-md-3 col-xs-4'>Clean 2</button></a>
+            <a href=# id=4><button class='btn btn-outline-primary col-md-3 col-xs-4'>Lead 2</button></a>
+            <a href=# id=5><button class='btn btn-outline-primary col-md-3 col-xs-4'>Riff 2</button></a>
         </form>
-        <br>
+    </div>
+    <div class="row mb-3">
         <form>
-            <a href=# id=6><button class='btn btn-default'>Clean 3</button></a>
-            <a href=# id=7><button class='btn btn-default'>Lead 3</button></a>
-            <a href=# id=8><button class='btn btn-default'>Default</button></a>
+            <a href=# id=6><button class='btn btn-outline-primary col-md-3 col-xs-4'>Clean 3</button></a>
+            <a href=# id=7><button class='btn btn-outline-primary col-md-3 col-xs-4'>Lead 3</button></a>
+            <a href=# id=8><button class='btn btn-outline-primary col-md-3 col-xs-4'>Default</button></a>
         </form>
+    </div>
+    <hr class="my-4 col-md-9 col-xs-12">
+    <div class="row mb-3">
+        <form>
+            <div class="slider col-md-9 col-xs-12" id=9></div>
+        </form>
+    </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>
+</html>
